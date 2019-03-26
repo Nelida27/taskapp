@@ -1,0 +1,52 @@
+﻿@model AllTasks.Models.tasks
+
+@{
+    ViewBag.Title = "About";
+}
+
+
+<div class="container container1 " >
+    <div class="form-group" >
+        <div class="centered">
+            @Html.LabelFor(model => model.Project_Name)
+        </div>
+        <div class="col-md-4 col-sm-2 centered1">
+            @*@Html.EditorFor(model => model.Project_Name)*@
+            <select class="form-control" id="Project_Name" name="Project_Name" onchange="javascript:handleSelect(this)">
+                <option>Select a Project</option>
+                <option value="/Project/Index/fca">
+                    FCA
+                </option>
+                <option value="/Project/Index/GD">GD</option>
+                <option value="/Project/Index/MM">MM</option>
+            </select>
+ 
+        </div>
+    </div>
+</div>
+<style>
+   .centered {
+  position: fixed; 
+  top: 50%;
+  left: 30%;
+}
+   .centered1 {
+        position: fixed;
+        top: 50%;
+        left: 38%;
+    }
+    .container1 {
+        width: 500px;
+        height: 200px;
+        background-color: rgb(180,198, 231);
+        position: fixed;
+        top: 40%;
+        left: 28%;
+    }
+</style>
+
+<script type="text/javascript">
+    function handleSelect(elm) {
+        window.location = elm.value;
+    }
+</script>

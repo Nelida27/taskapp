@@ -1,0 +1,98 @@
+﻿@model IEnumerable<AllTasks.Models.tasks>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+<p style="padding-top:40px;">
+    @Html.ActionLink("Create New", "Create") |
+    @Html.ActionLink("Back", "About", "Home")<br>
+    </p>
+    <form asp-controller="Project" asp-action="Index" method="get">
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+</form>
+<br>
+<table class="table table-bordered ">
+    <thead class="thead">
+        <tr>
+            <th style="width:80px;">
+                @Html.DisplayNameFor(model => model.Nr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worked)
+            </th>
+            <th style="width:80px;">
+                @Html.DisplayNameFor(model => model.T_L)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Test_Date)
+            </th>
+            <th style="width:80px;">
+                @Html.DisplayNameFor(model => model.My_Time)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="tbodyy">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="color:black;font-size:18px;text-align:center;">
+                @Html.DisplayFor(modelItem => item.Nr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Worked)
+            </td>
+            <td style="text-align:center;">
+                @Html.DisplayFor(modelItem => item.T_L)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.My_Time)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID },new {@class = "edit" }) 
+                
+               
+
+            </td>
+        </tr>
+    }
+</tbody>
+</table>
+
+<style>
+    .thead {
+        background-color:yellow;
+    }
+
+    .tbodyy {
+        background-color: rgb(180,198, 231);
+    }
+    .edit{
+        color:black;
+        font-size:16px;
+    }
+
+</style>
