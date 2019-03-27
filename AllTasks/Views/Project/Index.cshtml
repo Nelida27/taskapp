@@ -7,15 +7,20 @@
 
 
 
-
-<p style="padding-top:40px;">
-    @Html.ActionLink("Create New", "Create") |
-    @Html.ActionLink("Back", "About", "Home")<br>
-    </p>
+<div style="margin-top:40px;">
     <form asp-controller="Project" asp-action="Index" method="get">
-        Title: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
-</form>
+
+        Title:
+
+        <input class="inputStyle" type="text" name="SearchString">
+        <input type="submit" value="Filter" class="btn btn-default" />
+
+        <span style="padding-left:707px;">
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default btn-large" })
+            @Html.ActionLink("Back", "About", "Home", null, new { @class = "btn btn-default btn-large" })
+        </span>
+    </form>
+</div>
 <br>
 <table class="table table-bordered ">
     <thead class="thead">
@@ -46,53 +51,65 @@
         </tr>
     </thead>
     <tbody class="tbodyy">
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td style="color:black;font-size:18px;text-align:center;">
-                @Html.DisplayFor(modelItem => item.Nr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Worked)
-            </td>
-            <td style="text-align:center;">
-                @Html.DisplayFor(modelItem => item.T_L)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Test_Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.My_Time)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="color:black;font-size:18px;text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Nr)
+                </td>
+                <td style="text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td style="text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td style="text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Worked)
+                </td>
+                <td style="text-align:center;zoom:1.4;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.T_L)
+                </td>
+                <td style="text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.Test_Date)
+                </td>
+                <td style="text-align:center;vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => item.My_Time)
+                </td>
 
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID },new {@class = "edit" }) 
-                
-               
+                <td style="width:215px;text-align: center;vertical-align: middle;">
+                    @Html.ActionLink("Edit", "Edit", null, new { id = item.ID }, new { @class = " btn btn-default" })
+                    @Html.ActionLink("Details", "Details", null, new { id = item.ID }, new { @class = " btn btn-default" })
+                    @Html.ActionLink("Delete", "Delete", null, new { id = item.ID }, new { @class = " btn btn-default" })
 
-            </td>
-        </tr>
-    }
-</tbody>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
 <style>
     .thead {
-        background-color:yellow;
+        background-color: yellow;
     }
 
     .tbodyy {
-        background-color: rgb(180,198, 231);
-    }
-    .edit{
-        color:black;
-        font-size:16px;
+        background-color: rgb(237, 240, 244);
     }
 
+    .edit {
+        color: black;
+        font-size: 16px;
+    }
+
+    .create {
+        padding-left: 1000px;
+        padding-top: 30px;
+    }
+
+    .inputStyle {
+        height: 34.125px;
+        border-radius: 4px;
+        border: 1px solid;
+        border-color: #CCC;
+    }
 </style>

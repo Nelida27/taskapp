@@ -1,36 +1,36 @@
-﻿@model AllTasks.Models.Tasks
+﻿@model AllTasks.Models.tasks
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="padding-left:70px;">Details</h2>
 
-<div>
-    <h4>Tasks</h4>
+<div style="background-color: rgb(237, 240, 244);height:400px;">
+    
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <dl class="dl-horizontal textspace">
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Nr)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Nr)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Title)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Description)
         </dd>
 
@@ -38,45 +38,54 @@
             @Html.DisplayNameFor(model => model.Worked)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Worked)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.T_L)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.T_L)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Test_Date)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Test_Date)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.My_Time)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.My_Time)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Project_Name)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Project_Name)
         </dd>
 
     </dl>
+
+    <span style="padding-left:180px;">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-default btn-large" })
+        </span>
+
+        <span style="padding-left:15px;">
+            @Html.ActionLink("Back to List", "Index", "Project", new { href = "Index/" + Model.Project_Name, @class = "btn btn-default btn-large" })
+        </span>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<style>
+    .textspace{
+        padding-top:9px;
+    }
+</style>

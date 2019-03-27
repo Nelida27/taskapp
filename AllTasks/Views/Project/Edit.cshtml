@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 style="padding-left:110px;">Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -12,15 +12,15 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Tasks</h4>
-        <hr />
+        
+        <hr/>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.Nr, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nr, new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.Nr, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Worked, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Worked, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Worked,  new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.Worked, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -52,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.T_L, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
+                <div class="checkbox" style="padding-left:22px;padding-top:2px;zoom:1.4;">
                     @Html.EditorFor(model => model.T_L)
                     @Html.ValidationMessageFor(model => model.T_L, "", new { @class = "text-danger" })
                 </div>
@@ -62,7 +62,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Test_Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Test_Date, "{0:yyyy-MM-dd}", new { htmlAttributes = new { @class = "form-control", @type="date" } })
+                @Html.EditorFor(model => model.Test_Date, new { htmlAttributes = new { @class = "form-control bcolor",  @Value = DateTime.Today.ToString("dd/MM/yyyy")} })
                 @Html.ValidationMessageFor(model => model.Test_Date, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,7 +70,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.My_Time, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.My_Time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.My_Time, new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.My_Time, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -78,7 +78,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Project_Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Project_Name, new { htmlAttributes = new { @class = "form-control bcolor" } })
                 @Html.ValidationMessageFor(model => model.Project_Name, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -86,16 +86,19 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default"/>
-                
+                <span style="padding-left:20px;">
+                    @Html.ActionLink("Back to List", null, "Project", new { href = "Index/" + Model.Project_Name, @class = "btn btn-default btn-large" })
+                </span>
             </div>
         </div>
     </div>
 }
 
-    <div>
-        @Html.ActionLink("Back to List", null, null, null, new { href = Request.UrlReferrer })
- 
-    </div>
+   <style>
+       .bcolor {
+           background-color: rgb(237, 240, 244);
+       }
+   </style>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

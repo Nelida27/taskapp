@@ -15,8 +15,9 @@ namespace AllTasks.Models
         public string Worked { get; set; }
         [DisplayName("Tested L")]
         public bool T_L { get; set; }
-        [DisplayName("Test Date")]
+        [Display(Name = "Test Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Test_Date { get; set; }
         [DisplayName("My Time")]
         public decimal My_Time{ get; set; }
