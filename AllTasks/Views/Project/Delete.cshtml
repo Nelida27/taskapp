@@ -4,74 +4,74 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2 class="title--padd">Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Tasks</h4>
+<div style="background-color: rgb(237, 240, 244);height:350px;">
+    
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Nr)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Nr)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Title)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Worked)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Worked)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.T_L)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.T_L)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Test_Date)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Test_Date)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.My_Time)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.My_Time)
         </dd>
 
-        <dt>
+        <dt class="textspace">
             @Html.DisplayNameFor(model => model.Project_Name)
         </dt>
 
-        <dd>
+        <dd class="textspace">
             @Html.DisplayFor(model => model.Project_Name)
         </dd>
 
@@ -82,8 +82,15 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <span style="padding-left:180px;">
+                <input type="submit" value="Delete" class="btn btn-default" onclick="ToDelete ();" />
+            </span>
+            <span style="padding-left:15px;">
+                @Html.ActionLink("Back to List", "Index", "Project", new { href = "Index/" + Model.Project_Name, @class = "btn btn-default btn-large" })
+            </span>
         </div>
     }
 </div>
+<script>
+    
+</script>

@@ -22,7 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
-[‎27/‎03/‎2019 16:49] Ledja Kanani:
+
 .card-body-icon {
     position: absolute;
     z-index: 0;
@@ -80,4 +80,11 @@ textarea {
 
 .card-register {
     max-width: 40rem;
-} 
+}
+
+.bcolor {
+    background-color: rgb(237, 240, 244);
+}
+.title--padd {
+    padding-left: 110px;
+}

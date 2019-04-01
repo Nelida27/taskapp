@@ -115,19 +115,31 @@ namespace AllTasks.Controllers
             {
                 return HttpNotFound();
             }
-            return View(tasks);
-        }
+            else {
+                db.Tasks.Remove(tasks);
+                db.SaveChanges();
 
-        // POST: Project/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            tasks tasks = db.Tasks.Find(id);
-            db.Tasks.Remove(tasks);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index/" + tasks.Project_Name );
         }
+        //public ActionResult Delete(int id)
+        //{
+        //    User user = db.Users.Find(id);
+        //    db.Users.Remove(user);
+        //    db.SaveChanges();
+        //    TempData["Msg"] = "Data has been deleted succeessfully";
+        //    return RedirectToAction();
+        //}
+        // POST: Project/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    tasks tasks = db.Tasks.Find(id);
+        //    db.Tasks.Remove(tasks);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
