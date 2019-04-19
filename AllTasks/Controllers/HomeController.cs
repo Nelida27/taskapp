@@ -26,5 +26,9 @@ namespace AllTasks.Controllers
 
             return View();
         }
+        public ActionResult HtmlPage1()
+        {
+            return File(Server.MapPath("/Views/Home/") + "HtmlPage1.htm", "text/html");
+        }
     }
 }
