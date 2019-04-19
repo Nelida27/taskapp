@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Web.Mvc;
 
 namespace AllTasks.Models
 {
@@ -11,6 +13,7 @@ namespace AllTasks.Models
         [DisplayName("Task Nr")]
         public int Nr { get; set; }
         public string Title { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         public string Worked { get; set; }
         [DisplayName("Tested L")]

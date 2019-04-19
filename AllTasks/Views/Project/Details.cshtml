@@ -6,8 +6,8 @@
 
 <h2 class="title--padd">Details</h2>
 
-<div style="background-color: rgb(237, 240, 244);height:400px;">
-    
+<div style="background-color: rgb(223, 242, 219);height:400px;">
+
     <hr />
     <dl class="dl-horizontal textspace">
         <dt class="textspace">
@@ -77,15 +77,28 @@
     </dl>
 
     <span style="padding-left:180px;">
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-default btn-large" })
-        </span>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn bcolorr btn-large" })
+    </span>
 
-        <span style="padding-left:15px;">
-            @Html.ActionLink("Back to List", "Index", "Project", new { href = "Index/" + Model.Project_Name, @class = "btn btn-default btn-large" })
-        </span>
+    <span style="padding-left:15px;">
+        @Html.ActionLink("Back to List", "Index", "Project", new { href = "Index/" + Model.Project_Name, @class = "btn bcolorr btn-large" })
+    </span>
 </div>
 <style>
-    .textspace{
-        padding-top:9px;
+    .textspace {
+        padding-top: 9px;
+    }
+    .bcolorr {
+        background-color: rgb(28, 66, 92);
+        color: white;
+        border: 1px solid gray;
+    }
+
+    a:hover {
+        background-color: white;
+    }
+
+    input:hover {
+        background-color: white;
     }
 </style>
