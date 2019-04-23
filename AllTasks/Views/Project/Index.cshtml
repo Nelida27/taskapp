@@ -71,7 +71,8 @@
                     @Html.DisplayFor(modelItem => item.T_L)
                 </td>
                 <td style="text-align:center;vertical-align: middle;">
-                    @Html.DisplayFor(modelItem => item.Test_Date)
+                    @*@Html.DisplayFor(modelItem => item.Test_Date)*@
+                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Test_Date))
                 </td>
                 <td style="text-align:center;vertical-align: middle;">
                     @Html.DisplayFor(modelItem => item.My_Time)

@@ -16,11 +16,11 @@ namespace AllTasks.Models
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         public string Worked { get; set; }
-        [DisplayName("Tested L")]
+        [DisplayName("Tested with")]
         public bool T_L { get; set; }
         [Display(Name = "Test Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Test_Date { get; set; }
         [DisplayName("My Time")]
         public decimal My_Time{ get; set; }
